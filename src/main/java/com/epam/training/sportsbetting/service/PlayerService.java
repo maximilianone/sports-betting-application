@@ -57,11 +57,9 @@ public class PlayerService {
                             outcomeOdds.size()) - 1;
                     double moneyAmount = inputService.readPositiveDouble(REQUEST_MONEY_AMMOUNT, INVALID_INPUT_MONEY,
                             player.getBalance());
-
                     wagerList.add(new Wager(player, eventsOfType.get(eventNumber), outcomeOdds.get(betNumber),
                             moneyAmount, player.getCurrency(), now));
-
-
+                    
                     processPlayerBalance(player, moneyAmount);
                     view.displayFormattedMessage(BALANCE_MESSAGE, player.getCurrency().format(player.getBalance()));
                 } else {
