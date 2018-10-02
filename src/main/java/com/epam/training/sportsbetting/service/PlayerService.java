@@ -59,7 +59,7 @@ public class PlayerService {
                             player.getBalance());
                     wagerList.add(new Wager(player, eventsOfType.get(eventNumber), outcomeOdds.get(betNumber),
                             moneyAmount, player.getCurrency(), now));
-                    
+
                     processPlayerBalance(player, moneyAmount);
                     view.displayFormattedMessage(BALANCE_MESSAGE, player.getCurrency().format(player.getBalance()));
                 } else {
