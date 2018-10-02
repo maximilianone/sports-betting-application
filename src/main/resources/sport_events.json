@@ -1,174 +1,172 @@
-{
-  "events": [
-    {
-      "type": "football",
-      "title": "Southampton v Bournemoth",
-      "startDate": "27 Oct 2016 19:00",
-      "endDate": "27 Oct 2016 21:00",
-      "bets": [
-        {
-          "typeOfBet": "WINNER",
-          "description": "-",
-          "outcomes": [
-            {
-              "outcome": "Southampton",
-              "outcomeOdds": [
-                {
-                  "validFrom": "27 September 2016 19: 00",
-                  "validTo": "30 September 2016 18: 59",
-                  "oddValue": 4
-                },
-                {
-                  "validFrom": "30 September 2016 19: 00",
-                  "validTo": "-",
-                  "oddValue": 5
-                }
-              ]
-            },
-            {
-              "outcome": "Bournemoth",
-              "outcomeOdds": [
-                {
-                  "validFrom": "27 September 2016 19: 00",
-                  "validTo": "30 September 2016 18: 59",
-                  "oddValue": 1.7
-                },
-                {
-                  "validFrom": "30 September 2016 19: 00",
-                  "validTo": "-",
-                  "oddValue": 1.5
-                }
-              ]
-            },
-            {
-              "outcome": "Draw",
-              "outcomeOdds": [
-                {
-                  "validFrom": "27 September 2016 19: 00",
-                  "validTo": "30 September 2016 18: 59",
-                  "oddValue": 3
-                },
-                {
-                  "validFrom": "30 September 2016 19: 00",
-                  "validTo": "-",
-                  "oddValue": 3.5
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "typeOfBet": "BETTING_FOR_GOALS",
-          "description": "-",
-          "outcomes": [
-            {
-              "outcome": 0,
-              "outcomeOdds": [
-                {
-                  "validFrom": "27 September 2016 19: 00",
-                  "validTo": "-",
-                  "oddValue": 1.75
-                }
-              ]
-            },
-            {
-              "outcome": 1,
-              "outcomeOdds": [
-                {
-                  "validFrom": "27 September 2016 19: 00",
-                  "validTo": "-",
-                  "oddValue": 1.25
-                }
-              ]
-            },
-            {
-              "outcome": ">=2",
-              "outcomeOdds": [
-                {
-                  "validFrom": "27 September 2016 19: 00",
-                  "validTo": "-",
-                  "oddValue": 1.05
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "typeOfBet": "PLAYERS_SCORE",
-          "description": "scores of Victor Wanyama",
-          "outcomes": [
-            {
-              "outcome": 0,
-              "outcomeOdds": [
-                {
-                  "validFrom": "27 September 2016 19: 00",
-                  "validTo": "30 September 2016 18: 59",
-                  "oddValue": 4
-                },
-                {
-                  "validFrom": "30 September 2016 19: 00",
-                  "validTo": "-",
-                  "oddValue": 5
-                }
-              ]
-            },
-            {
-              "outcome": 1,
-              "outcomeOdds": [
-                {
-                  "validFrom": "27 September 2016 19: 00",
-                  "validTo": "-",
-                  "oddValue": 1.25
-                }
-              ]
-            },
-            {
-              "outcome": ">=2",
-              "outcomeOdds": [
-                {
-                  "validFrom": "27 September 2016 19: 00",
-                  "validTo": "-",
-                  "oddValue": 1.05
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "tennis",
-      "title": "Rafael Nadal vs. Alexander Zverev, Indian Wells 4th Round",
-      "startDate": "10th August 2016 19: 00",
-      "endDate": "10th August 2016 22: 00",
-      "bets": [
-        {
-          "typeOfBet": "WINNER",
-          "description": "-",
-          "outcomes": [
-            {
-              "outcome": "Rafael Nadal",
-              "outcomeOdds": [
-                {
-                  "validFrom": "1st January 2016 00: 00",
-                  "validTo": "-",
-                  "oddValue": 1.01
-                }
-              ]
-            },
-            {
-              "outcome": "Alexander Zverev",
-              "outcomeOdds": [
-                {
-                  "validFrom": "1st January 2016 00: 00",
-                  "validTo": "-",
-                  "oddValue": 1.7
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "type": "football",
+    "title": "Southampton v Bournemoth",
+    "startDate": "27 Oct 2018 19:00",
+    "endDate": "27 Oct 2018 21:00",
+    "bets": [
+      {
+        "typeOfBet": "WINNER",
+        "description": "-",
+        "outcomes": [
+          {
+            "outcome": "Southampton",
+            "outcomeOdds": [
+              {
+                "validFrom": "27 Sep 2018 19:00",
+                "validTo": "30 Sep 2018 18:59",
+                "oddValue": 4
+              },
+              {
+                "validFrom": "30 Sep 2018 19:00",
+                "validTo": "27 Oct 2018 18:59",
+                "oddValue": 5
+              }
+            ]
+          },
+          {
+            "outcome": "Bournemoth",
+            "outcomeOdds": [
+              {
+                "validFrom": "27 Sep 2018 19:00",
+                "validTo": "30 Sep 2018 18:59",
+                "oddValue": 1.7
+              },
+              {
+                "validFrom": "30 Sep 2018 19:00",
+                "validTo": "27 Oct 2018 18:59",
+                "oddValue": 1.5
+              }
+            ]
+          },
+          {
+            "outcome": "Draw",
+            "outcomeOdds": [
+              {
+                "validFrom": "27 Sep 2018 19:00",
+                "validTo": "30 Sep 2018 18:59",
+                "oddValue": 3
+              },
+              {
+                "validFrom": "30 Sep 2018 19:00",
+                "validTo": "27 Oct 2018 18:59",
+                "oddValue": 3.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "typeOfBet": "BETTING_FOR_GOALS",
+        "description": "-",
+        "outcomes": [
+          {
+            "outcome": "0",
+            "outcomeOdds": [
+              {
+                "validFrom": "27 Sep 2018 19:00",
+                "validTo": "27 Oct 2018 18:59",
+                "oddValue": 1.75
+              }
+            ]
+          },
+          {
+            "outcome": "1",
+            "outcomeOdds": [
+              {
+                "validFrom": "27 Sep 2018 19:00",
+                "validTo": "27 Oct 2018 18:59",
+                "oddValue": 1.25
+              }
+            ]
+          },
+          {
+            "outcome": ">=2",
+            "outcomeOdds": [
+              {
+                "validFrom": "27 Sep 2018 19:00",
+                "validTo": "27 Oct 2018 18:59",
+                "oddValue": 1.05
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "typeOfBet": "PLAYERS_SCORE",
+        "description": "Victor Wanyama",
+        "outcomes": [
+          {
+            "outcome": "0",
+            "outcomeOdds": [
+              {
+                "validFrom": "27 Sep 2018 19:00",
+                "validTo": "30 Sep 2018 18:59",
+                "oddValue": 4
+              },
+              {
+                "validFrom": "30 Sep 2018 19:00",
+                "validTo": "27 Oct 2018 18:59",
+                "oddValue": 5
+              }
+            ]
+          },
+          {
+            "outcome": "1",
+            "outcomeOdds": [
+              {
+                "validFrom": "27 Sep 2018 19:00",
+                "validTo": "27 Oct 2018 18:59",
+                "oddValue": 1.25
+              }
+            ]
+          },
+          {
+            "outcome": ">=2",
+            "outcomeOdds": [
+              {
+                "validFrom": "27 Sep 2018 19:00",
+                "validTo": "27 Oct 2018 18:59",
+                "oddValue": 1.05
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "tennis",
+    "title": "Rafael Nadal vs. Alexander Zverev, Indian Wells 4th Round",
+    "startDate": "10 Oct 2018 19:00",
+    "endDate": "10 Oct 2018 22:00",
+    "bets": [
+      {
+        "typeOfBet": "WINNER",
+        "description": "-",
+        "outcomes": [
+          {
+            "outcome": "Rafael Nadal",
+            "outcomeOdds": [
+              {
+                "validFrom": "01 Sep 2018 00:00",
+                "validTo": "10 Oct 2018 18:59",
+                "oddValue": 1.01
+              }
+            ]
+          },
+          {
+            "outcome": "Alexander Zverev",
+            "outcomeOdds": [
+              {
+                "validFrom": "01 Sep 2018 00:00",
+                "validTo": "10 Oct 2018 18:59",
+                "oddValue": 1.7
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

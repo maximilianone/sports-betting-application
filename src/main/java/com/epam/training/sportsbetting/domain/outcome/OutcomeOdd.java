@@ -1,35 +1,46 @@
 package com.epam.training.sportsbetting.domain.outcome;
 
-import java.time.LocalDate;
-import java.util.Objects;
+import java.time.LocalDateTime;
 
 public class OutcomeOdd {
     private Outcome outcome;
     private double oddValue;
-    private LocalDate validFrom;
-    private LocalDate validTo;
+    private LocalDateTime validFrom;
+    private LocalDateTime validTo;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        OutcomeOdd that = (OutcomeOdd) o;
-        return Objects.equals(outcome, that.outcome) &&
-                Objects.equals(validFrom, that.validFrom) &&
-                Objects.equals(validTo, that.validTo);
+    public Outcome getOutcome() {
+        return outcome;
     }
 
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(outcome, validFrom, validTo);
+    public void setOutcome(Outcome outcome) {
+        this.outcome = outcome;
     }
 
-    private boolean overlaps(OutcomeOdd testedOdd) {
-        boolean overlap = true;
-        if (this.validFrom.isAfter(testedOdd.validTo) || this.validTo.isBefore(testedOdd.validFrom)) {
-            overlap = false;
-        }
-        return overlap;
+    public double getOddValue() {
+        return oddValue;
+    }
+
+    public void setOddValue(double oddValue) {
+        this.oddValue = oddValue;
+    }
+
+    public LocalDateTime getValidFrom() {
+        return validFrom;
+    }
+
+    public void setValidFrom(LocalDateTime validFrom) {
+        this.validFrom = validFrom;
+    }
+
+    public LocalDateTime getValidTo() {
+        return validTo;
+    }
+
+    public void setValidTo(LocalDateTime validTo) {
+        this.validTo = validTo;
+    }
+
+    public boolean coversTheDate(LocalDateTime dateTime) {
+        return this.validFrom.isBefore(dateTime) && this.validTo.isAfter(dateTime);
     }
 }

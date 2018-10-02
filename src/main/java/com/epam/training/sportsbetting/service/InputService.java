@@ -1,8 +1,9 @@
-package com.epam.training.sportsbetting.ui;
+package com.epam.training.sportsbetting.service;
 
 import com.epam.training.sportsbetting.domain.wager.Currency;
+import com.epam.training.sportsbetting.exceptions.ExitException;
+import com.epam.training.sportsbetting.ui.BettingApplicationView;
 import com.epam.training.sportsbetting.utils.Constants;
-import com.sun.javaws.exceptions.ExitException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -29,12 +30,12 @@ public class InputService {
                 view.displayMessage(question);
                 input = scanner.nextLine();
                 if (input.equals(Constants.QUIT_INPUT)) {
-                    throw new ExitException(new Throwable(), ExitException.OK);
+                    throw new ExitException(ExitException.OK);
                 }
                 result = validator.apply(input);
                 correctInput = true;
             } catch (ExitException e) {
-                throw new ExitException(new Throwable(), e.getReason());
+                throw new ExitException(e.getMessage());
             } catch (Exception e) {
                 view.displayMessage(invalidMessage);
             }

@@ -1,18 +1,20 @@
 package com.epam.training.sportsbetting.domain.sportevent;
 
 import com.epam.training.sportsbetting.domain.bet.Bet;
+import com.epam.training.sportsbetting.utils.Constants;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class SportEvent {
     private String title;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private String type;
     private List<Bet> bets;
 
-    public SportEvent(String title, LocalDate startDate, LocalDate endDate, String type, List<Bet> bets) {
+    public SportEvent(String title, LocalDateTime startDate, LocalDateTime endDate, String type, List<Bet> bets) {
         this.title = title;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -28,19 +30,19 @@ public class SportEvent {
         this.title = title;
     }
 
-    public LocalDate getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 
@@ -58,5 +60,13 @@ public class SportEvent {
 
     public void setBets(List<Bet> bets) {
         this.bets = bets;
+    }
+
+    @Override
+    public String toString() {
+        return "SportEvent:" +
+                " " + title +
+                " from:" + DateTimeFormatter.ofPattern(Constants.DATE_TIME_PATTERN).format(startDate) +
+                " to:" + DateTimeFormatter.ofPattern(Constants.DATE_TIME_PATTERN).format(endDate);
     }
 }
