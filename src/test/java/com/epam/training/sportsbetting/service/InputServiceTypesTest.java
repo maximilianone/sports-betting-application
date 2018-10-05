@@ -1,7 +1,6 @@
 package com.epam.training.sportsbetting.service;
 
 import com.epam.training.sportsbetting.domain.wager.Currency;
-import com.epam.training.sportsbetting.exceptions.ExitException;
 import com.epam.training.sportsbetting.ui.BettingApplicationView;
 import com.epam.training.sportsbetting.utils.Constants;
 import org.junit.Before;
@@ -29,7 +28,7 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class InputServiceTypesTest {
-    private static final LocalDate date = LocalDate.of(1993, Month.JANUARY, 1);
+    private static final LocalDate DATE = LocalDate.of(1993, Month.JANUARY, 1);
     private static final String DATE_STRING = "01 Jan 1993";
     private static final String TEST_STRING = "test string";
     private static final String INVALID_STRING = ")(*#$^&@";
@@ -71,7 +70,7 @@ public class InputServiceTypesTest {
         inputService.readDateInput("", "");
 
         verify(inputService).readInput(any(), any(), any(), functionCaptor.capture());
-        assertEquals(date, functionCaptor.getValue().apply(DATE_STRING));
+        assertEquals(DATE, functionCaptor.getValue().apply(DATE_STRING));
     }
 
     @Test(expected = DateTimeParseException.class)
