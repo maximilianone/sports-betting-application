@@ -79,7 +79,7 @@ public class SportEventService {
     public void processWagers(List<Wager> wagerList, List<Result> results) {
         wagerList.forEach(wager -> {
             Result result = results.stream().filter(a -> a.getSportEvent() == wager.getEvent()).findAny().get();
-            wager.setWinnig(result.getOutcomes().contains(wager.getOutcomeOdd().getOutcome()));
+            wager.setWinning(result.getOutcomes().contains(wager.getOutcomeOdd().getOutcome()));
             wager.setProcessed(true);
         });
     }

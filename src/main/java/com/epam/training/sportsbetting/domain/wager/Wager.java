@@ -78,7 +78,7 @@ public class Wager {
         return isWinning;
     }
 
-    public void setWinnig(boolean winning) {
+    public void setWinning(boolean winning) {
         isWinning = winning;
     }
 

@@ -19,7 +19,7 @@ public class InputService {
         this.view = view;
     }
 
-    private <R> R readInput(String question, String invalidMessage, Function<String, R> validator)
+    <R> R readInput(Scanner scanner, String question, String invalidMessage, Function<String, R> validator)
             throws ExitException {
         boolean correctInput = false;
         String input;
@@ -46,15 +46,15 @@ public class InputService {
 
     public LocalDate readDateInput(String message, String invalidMessage) throws ExitException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_PATTERN);
-        return readInput(message, invalidMessage, a -> LocalDate.parse(a, formatter));
+        return readInput(scanner, message, invalidMessage, a -> LocalDate.parse(a, formatter));
     }
 
     public String readString(String message, String invalidMessage, String regex) throws ExitException {
-        return readInput(message, invalidMessage, a -> matchStringToRegex(a, regex));
+        return readInput(scanner, message, invalidMessage, a -> matchStringToRegex(a, regex));
     }
 
-    public int readPositiveInt(String message, String invalidMessage, int max) throws ExitException {
-        return readInput(message, invalidMessage, a -> {
+    public Integer readPositiveInt(String message, String invalidMessage, int max) throws ExitException {
+        return readInput(scanner, message, invalidMessage, a -> {
             int index = Integer.parseUnsignedInt(a);
             if (index > max || index < 1) {
                 throw new RuntimeException();
@@ -63,20 +63,20 @@ public class InputService {
         });
     }
 
-    public double readPositiveDouble(String message, String invalidMessage) throws ExitException {
-        return readInput(message, invalidMessage, a -> {
+    public Double readPositiveDouble(String message, String invalidMessage) throws ExitException {
+        return readInput(scanner, message, invalidMessage, a -> {
             double result = Double.parseDouble(a);
-            if (result <= 0 && String.valueOf(result).split("\\.")[1].length() > 2) {
+            if (result <= 0 || String.valueOf(result).split("\\.")[1].length() > 2) {
                 throw new RuntimeException();
             }
             return result;
         });
     }
 
-    public double readPositiveDouble(String message, String invalidMessage, double max) throws ExitException {
-        return readInput(message, invalidMessage, a -> {
+    public Double readPositiveDouble(String message, String invalidMessage, double max) throws ExitException {
+        return readInput(scanner, message, invalidMessage, a -> {
             double result = Double.parseDouble(a);
-            if (result <= 0 || result > max && String.valueOf(result).split("\\.")[1].length() > 2) {
+            if (result <= 0 || result > max || String.valueOf(result).split("\\.")[1].length() > 2) {
                 throw new RuntimeException();
             }
             return result;
@@ -84,7 +84,7 @@ public class InputService {
     }
 
     public Currency readCurrency(String message, String invalidMessage) throws ExitException {
-        return readInput(message, invalidMessage, Currency::valueOf);
+        return readInput(scanner, message, invalidMessage, Currency::valueOf);
     }
 
     private String matchStringToRegex(String input, String regex) {
