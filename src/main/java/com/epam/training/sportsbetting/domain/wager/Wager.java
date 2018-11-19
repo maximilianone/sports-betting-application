@@ -5,6 +5,7 @@ import com.epam.training.sportsbetting.domain.sportevent.SportEvent;
 import com.epam.training.sportsbetting.domain.user.Player;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Wager {
     private Player player;
@@ -88,5 +89,22 @@ public class Wager {
 
     public void setEvent(SportEvent event) {
         this.event = event;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Wager wager = (Wager) o;
+        return Double.compare(wager.amount, amount) == 0 &&
+                Objects.equals(event, wager.event) &&
+                Objects.equals(outcomeOdd, wager.outcomeOdd) &&
+                currency == wager.currency;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(event, outcomeOdd, amount, currency);
     }
 }

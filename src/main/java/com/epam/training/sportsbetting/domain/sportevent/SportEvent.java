@@ -6,6 +6,7 @@ import com.epam.training.sportsbetting.utils.Constants;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Objects;
 
 public class SportEvent {
     private String title;
@@ -68,5 +69,23 @@ public class SportEvent {
                 " " + title +
                 " from:" + DateTimeFormatter.ofPattern(Constants.DATE_TIME_PATTERN).format(startDate) +
                 " to:" + DateTimeFormatter.ofPattern(Constants.DATE_TIME_PATTERN).format(endDate);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SportEvent that = (SportEvent) o;
+        return Objects.equals(title, that.title) &&
+                Objects.equals(startDate, that.startDate) &&
+                Objects.equals(endDate, that.endDate) &&
+                Objects.equals(type, that.type) &&
+                Objects.equals(bets, that.bets);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(title, startDate, endDate, type, bets);
     }
 }

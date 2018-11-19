@@ -83,7 +83,7 @@ public class PlayerService {
         return player;
     }
 
-    private void processPlayerBalance(Player player, double moneyAmount) throws ExitException {
+    void processPlayerBalance(Player player, double moneyAmount) throws ExitException {
         double newBalance = player.getBalance() - moneyAmount;
         if (newBalance <= 1) throw new ExitException(ExitException.OK);
         player.setBalance(newBalance);

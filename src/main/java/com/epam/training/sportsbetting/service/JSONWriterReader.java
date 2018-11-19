@@ -20,10 +20,6 @@ public class JSONWriterReader {
                 (JsonDeserializer<LocalDateTime>) (json, type, jsonDeserializationContext) -> {
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_PATTERN);
                     return LocalDateTime.parse(json.getAsJsonPrimitive().getAsString(), formatter);
-                }).registerTypeAdapter(LocalDate.class,
-                (JsonDeserializer<LocalDate>) (json, type, jsonDeserializationContext) -> {
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_PATTERN);
-                    return LocalDate.parse(json.getAsJsonPrimitive().getAsString(), formatter);
                 }).create();
         JsonReader jsonReader = new JsonReader(new FileReader(filepath));
         T[] arr = gson.fromJson(jsonReader, clazz);

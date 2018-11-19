@@ -1,0 +1,26 @@
+[
+  {
+    "type": "tennis",
+    "title": "Title",
+    "startDate": "10 Oct 2018 19:00",
+    "endDate": "10 Oct 2018 19:00",
+    "bets": [
+      {
+        "typeOfBet": "WINNER",
+        "description": "-",
+        "outcomes": [
+          {
+            "outcome": "Outcome",
+            "outcomeOdds": [
+              {
+                "validFrom": "10 Oct 2018 19:00",
+                "validTo": "10 Oct 2018 19:00",
+                "oddValue": 2.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
