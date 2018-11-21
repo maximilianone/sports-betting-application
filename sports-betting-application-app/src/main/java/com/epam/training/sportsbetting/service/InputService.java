@@ -4,6 +4,7 @@ import com.epam.training.sportsbetting.domain.wager.Currency;
 import com.epam.training.sportsbetting.exceptions.ExitException;
 import com.epam.training.sportsbetting.ui.BettingApplicationView;
 import com.epam.training.sportsbetting.utils.Constants;
+import com.google.common.base.Preconditions;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -56,9 +57,7 @@ public class InputService {
     public Integer readPositiveInt(String message, String invalidMessage, int max) throws ExitException {
         return readInput(scanner, message, invalidMessage, a -> {
             int index = Integer.parseUnsignedInt(a);
-            if (index > max || index < 1) {
-                throw new RuntimeException();
-            }
+            Preconditions.checkArgument(!(index > max || index < 1));
             return index;
         });
     }
@@ -66,9 +65,8 @@ public class InputService {
     public Double readPositiveDouble(String message, String invalidMessage) throws ExitException {
         return readInput(scanner, message, invalidMessage, a -> {
             double result = Double.parseDouble(a);
-            if (result <= 0 || String.valueOf(result).split("\\.")[1].length() > 2) {
-                throw new RuntimeException();
-            }
+            Preconditions.checkArgument(!(result <= 0
+                    || String.valueOf(result).split("\\.")[1].length() > 2));
             return result;
         });
     }
@@ -76,9 +74,9 @@ public class InputService {
     public Double readPositiveDouble(String message, String invalidMessage, double max) throws ExitException {
         return readInput(scanner, message, invalidMessage, a -> {
             double result = Double.parseDouble(a);
-            if (result <= 0 || result > max || String.valueOf(result).split("\\.")[1].length() > 2) {
-                throw new RuntimeException();
-            }
+            Preconditions.checkArgument(!(result <= 0
+                    || result > max
+                    || String.valueOf(result).split("\\.")[1].length() > 2));
             return result;
         });
     }
@@ -88,10 +86,7 @@ public class InputService {
     }
 
     private String matchStringToRegex(String input, String regex) {
-        if (input.matches(regex)) {
-            return input;
-        } else {
-            throw new RuntimeException();
-        }
+        Preconditions.checkArgument(input.matches(regex));
+        return input;
     }
 }

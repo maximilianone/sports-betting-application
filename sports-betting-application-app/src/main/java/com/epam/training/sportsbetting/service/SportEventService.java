@@ -8,7 +8,6 @@ import com.epam.training.sportsbetting.domain.wager.Wager;
 import com.epam.training.sportsbetting.ui.BettingApplicationView;
 import com.epam.training.sportsbetting.utils.Constants;
 
-import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

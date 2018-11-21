@@ -112,7 +112,7 @@ class InputServiceTest {
     void shouldThrowExceptionWhenInvalidString() throws Exception {
         doAnswer(ANSWER).when(inputService).readInput(any(), any(), any(), any());
 
-        assertThrows(RuntimeException.class, () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
             inputService.readString("", "", Constants.STRING_PATTERN);
 
             verify(inputService).readInput(any(), any(), any(), functionCaptor.capture());
@@ -151,7 +151,7 @@ class InputServiceTest {
     void shouldThrowExceptionWhenGreaterThenMaxInt() throws Exception {
         doAnswer(ANSWER).when(inputService).readInput(any(), any(), any(), any());
 
-        assertThrows(RuntimeException.class, () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
             inputService.readPositiveInt("", "", MAX);
 
             verify(inputService).readInput(any(), any(), any(), functionCaptor.capture());
@@ -177,7 +177,7 @@ class InputServiceTest {
     void shouldThrowExceptionWhenInvalidDouble() throws Exception {
         doAnswer(ANSWER).when(inputService).readInput(any(), any(), any(), any());
 
-        assertThrows(RuntimeException.class, () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
             inputService.readPositiveDouble("", "");
 
             verify(inputService).readInput(any(), any(), any(), functionCaptor.capture());
@@ -192,7 +192,7 @@ class InputServiceTest {
     void shouldThrowExceptionWhenGreaterThenMax() throws Exception {
         doAnswer(ANSWER).when(inputService).readInput(any(), any(), any(), any());
 
-        assertThrows(RuntimeException.class, () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
             inputService.readPositiveDouble("", "", MAX_DOUBLE);
 
             verify(inputService).readInput(any(), any(), any(), functionCaptor.capture());
