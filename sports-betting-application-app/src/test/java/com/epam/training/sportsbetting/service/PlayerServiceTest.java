@@ -111,8 +111,7 @@ class PlayerServiceTest {
         when(sportEventService.getEventsOfType(any(), anyString())).thenReturn(sportEventList);
         when(inputService.readString(anyString(), anyString(), anyString())).thenAnswer(answer);
 
-        playerService.inputWager(sportEventList, player);
-
+        assertThrows(ExitException.class, () -> playerService.inputWager(sportEventList, player));
         verify(view, Mockito.times(1)).displayMessage(NO_OUTCOME_ODDS);
     }
 

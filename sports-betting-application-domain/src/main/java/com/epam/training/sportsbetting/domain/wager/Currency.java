@@ -18,6 +18,7 @@ public enum Currency {
         symbols.setGroupingSeparator(' ');
         symbols.setCurrencySymbol(this.toString());
         format.setDecimalFormatSymbols(symbols);
+        format.applyPattern("###,###.### ¤");
         return format.format(value);
     }
 }

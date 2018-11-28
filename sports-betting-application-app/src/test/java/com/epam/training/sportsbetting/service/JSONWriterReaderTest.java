@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JSONWriterReaderTest {
-    private static final String SPORT_EVENTS_FILEPATH = "src/main/resources/sport_events_test.json";
+    private static final String SPORT_EVENTS_FILEPATH = "/sport_events_test.json";
 
     @Test
     void shouldReturnValidClass() throws Exception {
